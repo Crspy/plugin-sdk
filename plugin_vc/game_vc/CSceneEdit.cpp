@@ -1,5 +1,5 @@
 /*
-    Plugin-SDK (Grand Theft Auto) source file
+    Plugin-SDK (Grand Theft Auto Vice City) source file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
@@ -27,13 +27,13 @@ unsigned int &CSceneEdit::m_nPedmodelId = *(unsigned int*)0x9786B8;
 short &CSceneEdit::m_nVehicle = *(short*)0xA10AAE;
 short &CSceneEdit::m_nVehicle2 = *(short*)0xA10AA6;
 unsigned int &CSceneEdit::m_nVehiclemodelId = *(unsigned int*)0x9B6CE0;
-unsigned short &CSceneEdit::m_nWeaponType = *(unsigned short*)0xA10A6E;
+eWeaponType &CSceneEdit::m_nWeaponType = *(eWeaponType*)0xA10A6E;
 CVector *CSceneEdit::m_vecCamHeading = (CVector*)0xA0FC60;
 CVector *CSceneEdit::m_vecCurrentPosition = (CVector*)0xA0FD60;
 CVector *CSceneEdit::m_vecGotoPosition = (CVector*)0xA1091C;
-CPed *CSceneEdit::pActors = (CPed*)0x94DD1C;
-CVehicle *CSceneEdit::pVehicles = (CVehicle*)0x9B6E3C;
-CMovieData *CSceneEdit::Movie = (CMovieData*)0x7F9C98;
+CPed **CSceneEdit::pActors = (CPed**)0x94DD1C;
+CVehicle **CSceneEdit::pVehicles = (CVehicle**)0x9B6E3C;
+CMovie *CSceneEdit::Movie = (CMovie*)0x7F9C98;
 
 // Converted from cdecl bool CSceneEdit::SelectWeapon(void) 0x6032E0
 bool CSceneEdit::SelectWeapon() {

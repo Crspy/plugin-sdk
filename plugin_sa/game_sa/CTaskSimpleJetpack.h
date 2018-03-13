@@ -1,17 +1,16 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CTaskSimple.h"
 #include "RenderWare.h"
 #include "CVector.h"
 
-#pragma pack(push, 1)
 class PLUGIN_API CTaskSimpleJetPack : public CTaskSimple
 {
 public:
@@ -58,7 +57,6 @@ public:
     static float &LEG_SWING_GRAVITY_MULT; // 0.01
     static float &LEG_SWING_DAMP_FRAC;    // 0.98
 };
-#pragma pack(pop)
 
 extern CVector &JETPACK_POS_OFFSET; // { 0.1, 0.08, 0.0 }
 extern CVector &JETPACK_ROT_AXIS;   // { 0.0, 1.0, 0.0 }

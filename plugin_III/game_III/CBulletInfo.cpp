@@ -1,17 +1,19 @@
 /*
-    Plugin-SDK (Grand Theft Auto) source file
+    Plugin-SDK (Grand Theft Auto 3) source file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #include "CBulletInfo.h"
 
-unsigned int MAX_BULLET_INFOS = 100;
 CBulletInfo *aBulletInfos = (CBulletInfo *)0x64D0D8;
+bool &bPlayerSniperBullet = *(bool *)0x95CD81;
+CVector *PlayerSniperBulletStart = (CVector *)0x9414BC;
+CVector *PlayerSniperBulletEnd = (CVector *)0x9430C8;
 
-// Converted from cdecl void CBulletInfo::AddBullet(CEntity *creator, eWeaponType weaponType, CVector position, CVector velocity) 0x558470
-void CBulletInfo::AddBullet(CEntity* creator, eWeaponType weaponType, CVector position, CVector velocity) {
-    plugin::Call<0x558470, CEntity*, eWeaponType, CVector, CVector>(creator, weaponType, position, velocity);
+// Converted from cdecl bool CBulletInfo::AddBullet(CEntity *creator, eWeaponType weaponType, CVector position, CVector velocity) 0x558470
+bool CBulletInfo::AddBullet(CEntity* creator, eWeaponType weaponType, CVector position, CVector velocity) {
+    return plugin::CallAndReturn<bool, 0x558470, CEntity*, eWeaponType, CVector, CVector>(creator, weaponType, position, velocity);
 }
 
 // Converted from thiscall void CBulletInfo::CBulletInfo(void) 0x559020 

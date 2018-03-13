@@ -1,11 +1,11 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CRGBA.h"
 
 enum eHudColours
@@ -28,17 +28,17 @@ enum eHudColours
 	HUD_COLOUR_NUM_COLOURS
 };
 
-#pragma pack(push, 4)
+
 class PLUGIN_API CHudColour
 {
 public:
 	unsigned char red, green, blue, alpha;
 };
-#pragma pack(pop)
+
 
 VALIDATE_SIZE(CHudColour, 4);
 
-#pragma pack(push, 4)
+
 class PLUGIN_API CHudColours
 {
 public:
@@ -59,7 +59,7 @@ public:
 	// get color RGBA. "color" parameter - index of color in the table, see eHudColours enum.
 	CRGBA GetRGBA(unsigned char color);
 };
-#pragma pack(pop)
+
 
 VALIDATE_SIZE(CHudColours, 0x3C);
 

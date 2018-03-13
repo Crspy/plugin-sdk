@@ -1,11 +1,11 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CFont.h"
 
 enum eMenuType : unsigned char
@@ -14,7 +14,7 @@ enum eMenuType : unsigned char
     MENU_TYPE_GRID,
 };
 
-#pragma pack(push, 1)
+
 class PLUGIN_API tMenuPanel
 {
 public:
@@ -44,7 +44,6 @@ private:
     char           _pad2;
 public:
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(tMenuPanel, 0x418);
 

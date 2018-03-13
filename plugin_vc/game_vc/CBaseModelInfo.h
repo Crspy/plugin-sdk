@@ -1,13 +1,13 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto Vice City) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_VC.h"
-#include "game_vc/RenderWare.h"
+#include "PluginBase.h"
+#include "RenderWare.h"
 
 enum ModelInfoType {
     MODEL_INFO_SIMPLE = 1,
@@ -22,7 +22,6 @@ class C2dEffect;
 class CColModel;
 
 // originally an abstract class
-#pragma pack(push, 1)
 class CBaseModelInfo {
 public:
     char           m_szName[21];
@@ -64,6 +63,5 @@ protected:
     CBaseModelInfo(const CBaseModelInfo &) {};
     CBaseModelInfo &operator=(const CBaseModelInfo &) { return *this; };
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CBaseModelInfo, 0x28);

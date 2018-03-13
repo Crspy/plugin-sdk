@@ -1,11 +1,11 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 
 #define FUNC_CMissionCleanup__Init 0x4637A0
 #define FUNC_CMissionCleanup__Process 0x468560
@@ -32,21 +32,23 @@ enum MissionCleanUpEntityType
 	MISSION_CLEANUP_ENTITY_TYPE_TXD = 13
 };
 
-#pragma pack(push, 1)
+
 struct PLUGIN_API tMissionCleanupEntity
 {
   char type;
   char __pad[3];
   int handle;
 };
-#pragma pack(pop)
+VALIDATE_SIZE(tMissionCleanupEntity, 0x8);
 
-#pragma pack(push, 1)
+
 class PLUGIN_API CMissionCleanup
 {
+public:
 	tMissionCleanupEntity m_Objects[75];
 	char m_Count;
-
+private:
+	char _pad[3];
 public:
 	// Default constructor
 	CMissionCleanup();
@@ -69,6 +71,5 @@ public:
 	// Checks if collision has loaded for mission objects
 	void CheckIfCollisionHasLoadedForMissionObjects();
 };
-#pragma pack(pop)
 
-VALIDATE_SIZE(CMissionCleanup, 0x259);
+VALIDATE_SIZE(CMissionCleanup, 0x25C);

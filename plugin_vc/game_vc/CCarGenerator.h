@@ -1,18 +1,18 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto Vice City) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_VC.h"
+#include "PluginBase.h"
 #include "CVector.h"
 #include "eVehicleModel.h"
 
 class CVehicle;
 
-#pragma pack(push, 4)
+
 class CCarGenerator {
 public:
     eVehicleModel  m_nModelId;
@@ -41,6 +41,5 @@ public:
     void SwitchOff();
     void SwitchOn();
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CCarGenerator, 0x2C);

@@ -1,12 +1,12 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto 3) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 #include "CVehicle.h"
 #include "CPathNode.h"
 
@@ -18,7 +18,7 @@ enum ePlaneNodes {
     PLANE_NUM_NODES
 };
 
-#pragma pack(push, 4)
+
 class CPlane : public CVehicle {
 protected:
     CPlane(plugin::dummy_func_t) : CVehicle(plugin::dummy) {}
@@ -45,7 +45,6 @@ public:
     static bool TestRocketCollision(CVector* arg0);
     static void UpdatePlanes();
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CPlane, 0x29C);
 

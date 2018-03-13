@@ -1,11 +1,11 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CPhysical.h"
 #include "CAEVehicleAudioEntity.h"
 #include "tHandlingData.h"
@@ -73,7 +73,7 @@ enum eVehicleLightsFlags {
 };
 
 enum eVehicleCreatedBy {
-    RANDOM_VEHICLE = 0,
+    RANDOM_VEHICLE = 1,
     MISSION_VEHICLE = 2,
     PARKED_VEHICLE = 3,
     PERMANENT_VEHICLE = 4
@@ -102,7 +102,7 @@ class CWeapon;
 class CPed;
 typedef int tWheelState;
 
-#pragma pack(push, 4)
+
 class PLUGIN_API  CVehicle : public CPhysical {
 protected:
     CVehicle(plugin::dummy_func_t) : CPhysical(plugin::dummy) {}
@@ -539,7 +539,6 @@ public:
     static void* operator new(unsigned int size);
     static void operator delete(void* data);
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CVehicle, 0x5A0);
 

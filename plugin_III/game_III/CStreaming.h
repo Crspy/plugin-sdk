@@ -1,12 +1,12 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto 3) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 #include "CStreamingInfo.h"
 #include "CDirectory.h"
 #include "CVector.h"
@@ -47,7 +47,7 @@ public:
     static CStreamingInfo *ms_aInfoForModel;
 
     static void *ms_pStreamingBuffer;
-    static CDirectory *ms_pExtraObjectsDir;     
+    static CDirectory **ms_pExtraObjectsDir;     
 
     // functions
     static void RequestModel(int modelIndex, int flags);
@@ -97,7 +97,7 @@ public:
     static void IHaveUsedStreamingMemory();
     // empty function
     static void ImGonnaUseStreamingMemory();
-    static bool IsObjectInCdImage(int arg0);
+    static bool IsObjectInCdImage(int modelIndex);
     static void LoadCdDirectory(char const* archivename, int archiveID);
     static void LoadCdDirectory();
     static void LoadInitialPeds();

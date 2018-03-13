@@ -1,17 +1,17 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CTaskSimple.h"
 #include "CAnimBlendAssociation.h"
 #include "CEntity.h"
 
-#pragma pack(push,4)
+
 class PLUGIN_API CTaskSimpleFight : public CTaskSimple {
 protected:
     CTaskSimpleFight(plugin::dummy_func_t a) : CTaskSimple(a) {}
@@ -36,6 +36,5 @@ public:
    char field_27;
     
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CTaskSimpleFight, 0x28);

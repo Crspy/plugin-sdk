@@ -1,14 +1,13 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto Vice City) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_VC.h"
+#include "PluginBase.h"
 
-#pragma pack(push, 4)
 struct tBikeHandlingData {
     int m_dwVehicleId;
     float   m_fLeanFwdCOM;
@@ -27,6 +26,5 @@ struct tBikeHandlingData {
     float   m_fWheelieStabMult;
     float   m_fStoppieStabMult;
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(tBikeHandlingData, 0x40);

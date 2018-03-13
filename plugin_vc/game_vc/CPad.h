@@ -1,13 +1,13 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto Vice City) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_VC.h"
+#include "PluginBase.h"
 
-#pragma pack(push, 1)
+
 struct CMouseState {
     char lmb;
     char rmb;
@@ -20,9 +20,9 @@ struct CMouseState {
     long X;
     long Y;
 };
-#pragma pack(pop)
+VALIDATE_SIZE(CMouseState, 0x10);
 
-#pragma pack(push, 1)
+
 struct CKeyState {
     short standardKey;
     short esc;
@@ -70,9 +70,9 @@ struct CKeyState {
     short rwin;
     short apps;
 };
-#pragma pack(pop)
+VALIDATE_SIZE(CKeyState, 0x5A);
 
-#pragma pack(push, 1)
+
 // Set values to 128 unless otherwise specified
 class CControllerState {
 public:
@@ -102,20 +102,35 @@ public:
     signed short ShockButtonL;
     signed short ShockButtonR;
 
-    signed short m_bChatIndicated;
-    signed short m_bPedWalk;
-    signed short m_bVehicleMouseLook;
     signed short m_bRadioTrackSkip;
 };
-#pragma pack(pop)
 
-#pragma pack(push, 1)
+VALIDATE_SIZE(CControllerState, 0x2A);
+
+
 class CPad {
 public:
     CControllerState NewState;
     CControllerState OldState;
+    short SteeringLeftRightBuffer[10];
+    int DrunkDrivingBufferUsed;
+    CControllerState PCTempKeyState;
+    CControllerState PCTempJoyState;
+    CControllerState PCTempMouseState;
+    short WORD_EA;
+    short Mode;
+    short ShakeDur;
+    short DisablePlayerControls;
+    char ShakeFreq;
+    char bHornHistory[5];
+    char iCurrHornHistory;
+    char JustOutOfFrontEnd;
+    char bApplyBrakes;
+    char TEMP[13];
+    int LastTimeTouched;
+    int AverageWeapon;
+    int AverageEntries;
 
-public:
     static CMouseState &PreviousMouseState;
     static CMouseState &CurrentMouseState;
     static CKeyState &CurrentKeyState;
@@ -153,4 +168,7 @@ public:
     bool GetPedWalkUpDown();
     bool GetPedWalkLeftRight();
 };
-#pragma pack(pop)
+
+VALIDATE_SIZE(CPad, 0x114);
+
+extern CPad* Pads;      //CPad Pads[2];

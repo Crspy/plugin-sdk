@@ -1,5 +1,5 @@
 /*
-    Plugin-SDK (Grand Theft Auto) source file
+    Plugin-SDK (Grand Theft Auto 3) source file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
@@ -21,9 +21,9 @@ CVector& FindPlayerCentreOfWorld(int playerId) {
     return plugin::CallAndReturn<CVector&, 0x4A1170, int>(playerId);
 }
 
-// Converted from cdecl CPed* FindPlayerPed(void) 0x4A1150;
-CPed* FindPlayerPed() {
-    return plugin::CallAndReturn<CPed*, 0x4A1150>();
+// Converted from cdecl CPlayerPed* FindPlayerPed(void) 0x4A1150;
+CPlayerPed* FindPlayerPed() {
+    return plugin::CallAndReturn<CPlayerPed*, 0x4A1150>();
 }
 
 // Converted from cdecl CTrain* FindPlayerTrain(void) 0x4A1120;

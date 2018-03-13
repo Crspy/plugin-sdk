@@ -1,17 +1,16 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CTaskSimple.h"
 #include "CVector.h"
 #include "CVector2D.h"
 
-#pragma pack(push, 1)
 class CTaskSimpleUseGun : public CTaskSimple
 {
 public:
@@ -42,6 +41,5 @@ public:
 	char field_3A;
 	char field_3B;
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CTaskSimpleUseGun, 0x3C);

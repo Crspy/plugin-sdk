@@ -1,11 +1,14 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
+#include "ePedType.h"
+#include "CZoneInfo.h"
+#include "CZone.h"
 
 enum ePopcyclePedGroup {
     POPCYCLE_PEDGROUP_WORKERS_LA,
@@ -102,4 +105,53 @@ enum ePopcycleCarGroup {
     POPCYCLE_CARGROUP_CHEAT4,
 
     POPCYCLE_TOTAL_NUM_CARGROUPS
+};
+
+
+class PLUGIN_API CPopCycle
+{
+public:
+
+	static float& m_NumOther_Cars;
+	static float& m_NumCops_Cars;
+	static float& m_NumGangs_Cars;
+	static float& m_NumDealers_Cars;
+	static float& m_NumOther_Peds;
+	static float& m_NumCops_Peds;
+	static float& m_NumGangs_Peds;
+	static float& m_fPercOther;
+	static float& m_fPercCops;
+	static float& m_fPercGangs;
+	static float& m_fPercDealers;
+	static bool& m_bCurrentZoneIsGangArea;
+	static float& m_fCurrentZoneDodgyness;
+	static CZone* m_pCurrZone;
+	static CZoneInfo* m_pCurrZoneInfo;
+	static int& m_nCurrentZoneType;
+	static int& m_nCurrentTimeOfWeek;
+	static int& m_nCurrentTimeIndex;
+	static char* m_nPercTypeGroup;				// char m_nPercTypeGroup[8640];
+	static unsigned char* m_nPercOther;				// unsigned char m_nPercOther[480];
+	static unsigned char* m_nPercCops;			// unsigned char m_nPercCops[480];
+	static unsigned char* m_nPercGang;	// unsigned char m_nPercGang[480];
+	static unsigned char* m_nPercDealers;				// unsigned char m_nPercDealers[480];
+	static unsigned char* m_nMaxNumCars;			 // unsigned char m_nMaxNumCars[480];
+	static unsigned char* m_nMaxNumPeds;			 // unsigned char m_nMaxNumPeds[480];
+	static float& m_NumDealers_Peds;
+
+
+
+	static bool FindNewPedType(ePedType* arg1, int* modelindex, bool arg3, bool arg4);
+	static float GetCurrentPercOther_Peds();
+	static void Initialise();
+	static bool IsPedAppropriateForCurrentZone(int modelindex);
+	static bool IsPedInGroup(int modelIndex, int PopCycle_Group);
+	static bool PedIsAcceptableInCurrentZone(int modelIndex);
+	static int PickARandomGroupOfOtherPeds();
+	static void PlayerKilledADealer();
+	static void Update();
+	static void UpdateAreaDodgyness();
+	static void UpdateDealerStrengths();
+	static void UpdatePercentages();
+
 };

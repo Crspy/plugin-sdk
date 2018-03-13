@@ -1,18 +1,17 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto Vice City) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_VC.h"
+#include "PluginBase.h"
 #include "tHandlingData.h"
 #include "tBikeHandlingData.h"
 #include "tFlyingHandlingData.h"
 #include "tBoatHandlingData.h"
 
-#pragma pack(push, 4)
 class cHandlingDataMgr {
 public:
     float field_0;
@@ -21,7 +20,7 @@ public:
     float field_C;
     float field_10;
     tHandlingData       m_aVehicleHandling[106];
-    tBikeHandlingData   m_aBikeHandling[5];
+    tBikeHandlingData   m_aBikeHandling[5]; 
     tFlyingHandlingData m_aFlyingHandling[10];
     tBoatHandlingData   m_aBoatHandling[11];
 
@@ -40,6 +39,5 @@ public:
     // process handling.cfg
     void LoadHandlingData();
 };
-#pragma pack(pop)
 
-//VALIDATE_SIZE(cHandlingDataMgr, 0x61FC);
+VALIDATE_SIZE(cHandlingDataMgr, 0x5B58);

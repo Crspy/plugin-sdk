@@ -1,12 +1,12 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto 3) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 
 enum eDamageState {
     DAMSTATE_OK = 0,
@@ -78,7 +78,7 @@ enum eLights {
     LIGHT_REAR_RIGHT = 3
 };
 
-#pragma pack(push, 4)
+
 class CDamageManager {
 public:
      int uDamId;
@@ -115,6 +115,5 @@ public:
      void SetLightStatus(eLights light, unsigned int status);
      void SetPanelStatus(int panel, unsigned int status);
 };
-#pragma pack(pop)
 
-// VALIDATE_SIZE(CDamageManager, 0x18);
+VALIDATE_SIZE(CDamageManager, 0x1C);

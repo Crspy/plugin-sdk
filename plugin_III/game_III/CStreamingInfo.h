@@ -1,12 +1,12 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto 3) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 
 enum eStreamingFlags {
     GAME_REQUIRED = 0x2,
@@ -34,10 +34,10 @@ public:
     unsigned int m_nCdSize;
 
     //funcs
-    CStreamingInfo* AddToList(CStreamingInfo* listStart);
+    void AddToList(CStreamingInfo* listStart);
     bool GetCdPosnAndSize(unsigned int& posn, unsigned int& size);
-    int GetCdSize();
-    CStreamingInfo* RemoveFromList();
+    unsigned int GetCdSize();
+    void RemoveFromList();
     void SetCdPosnAndSize(unsigned int posn, unsigned int size);
 };
 

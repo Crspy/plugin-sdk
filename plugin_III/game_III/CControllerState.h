@@ -1,14 +1,13 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto 3) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 
-#pragma pack(push, 2)
 class CControllerState {
 public:
     signed short LeftStickX; // move/steer left (-128?)/right (+128)
@@ -42,6 +41,5 @@ public:
     //funcs
     void Clear();
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CControllerState, 0x2A);

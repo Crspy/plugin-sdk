@@ -1,12 +1,12 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto 3) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 #include "CVector.h"
 
 class CRestart {
@@ -14,19 +14,19 @@ public:
     // variables
     static CVector *HospitalRestartPoints; // [8]
     static float &HospitalRestartHeadings; // [8]
-    static short &NumberOfHospitalRestarts;
+    static unsigned short &NumberOfHospitalRestarts;
     static bool &bFadeInAfterNextDeath;
 
     static CVector *PoliceRestartPoints;   // [8]
     static float &PoliceRestartHeadings;   // [8]
-    static short &NumberOfPoliceRestarts;
+    static unsigned short &NumberOfPoliceRestarts;
     static bool &bFadeInAfterNextArrest;
 
     static CVector *OverridePosition;
     static float &OverrideHeading;
     static bool &bOverrideRestart;
-    static char &OverrideHospitalLevel;
-    static char &OverridePoliceStationLevel;
+    static unsigned char &OverrideHospitalLevel;
+    static unsigned char &OverridePoliceStationLevel;
 
     // functions
     static void Initialise();

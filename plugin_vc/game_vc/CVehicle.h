@@ -1,12 +1,12 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto Vice City) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_VC.h"
+#include "PluginBase.h"
 #include "CPhysical.h"
 #include "CAutoPilot.h"
 #include "CStoredCollPoly.h"
@@ -21,7 +21,14 @@ enum eCarWeapon {
 };
 
 enum eCarLock {
-
+    CARLOCK_NOT_USED,
+    CARLOCK_UNLOCKED,
+    CARLOCK_LOCKED,
+    CARLOCK_LOCKOUT_PLAYER_ONLY,
+    CARLOCK_LOCKED_PLAYER_INSIDE,
+    CARLOCK_COP_CAR,
+    CARLOCK_FORCE_SHUT_DOORS,
+    CARLOCK_SKIP_SHUT_DOORS
 };
 
 enum eVehicleType {
@@ -46,7 +53,10 @@ enum eVehicleLightsFlags {
 };
 
 enum eVehicleCreatedBy {
-
+    RANDOM_VEHICLE = 1,
+    MISSION_VEHICLE = 2,
+    PARKED_VEHICLE = 3,
+    PERMANENT_VEHICLE = 4
 };
 
 enum eBombState {
@@ -68,7 +78,6 @@ class CWeapon;
 class CPed;
 typedef int tWheelState;
 
-#pragma pack(push, 4)
 class CVehicle : public CPhysical {
 protected:
     CVehicle(plugin::dummy_func_t) : CPhysical(plugin::dummy) {}
@@ -290,7 +299,6 @@ public:
     static void* operator new(unsigned int size, int arg1);
     static void operator delete(void* data);
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CVehicle, 0x2A0);
 

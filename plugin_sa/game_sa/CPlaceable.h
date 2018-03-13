@@ -1,15 +1,14 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CSimpleTransform.h"
 #include "CMatrixLink.h"
 
-#pragma pack(push, 4)
 class PLUGIN_API CPlaceable {
 protected:
     CPlaceable(plugin::dummy_func_t) {}
@@ -45,6 +44,5 @@ public:
         return m_matrix ? m_matrix->pos : m_placement.m_vPosn;
     }
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CPlaceable, 0x18);

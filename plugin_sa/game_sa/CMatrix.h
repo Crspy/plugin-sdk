@@ -1,15 +1,14 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "RenderWare.h"
 #include "CQuaternion.h"
 
-#pragma pack(push, 4)
 class CMatrix {
 public:
     // RwV3d-like:
@@ -67,7 +66,6 @@ public:
 	void operator+=(CMatrix const& right);
 	void operator*=(CMatrix const& right);
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CMatrix, 0x48);
 

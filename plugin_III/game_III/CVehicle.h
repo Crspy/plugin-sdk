@@ -1,12 +1,12 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto 3) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 #include "CPhysical.h"
 #include "CColModel.h"
 #include "CDamageManager.h"
@@ -48,7 +48,7 @@ enum eVehicleLightsFlags {
 };
 
 enum eVehicleCreatedBy {
-    RANDOM_VEHICLE = 0,
+    RANDOM_VEHICLE = 1,
     MISSION_VEHICLE = 2,
     PARKED_VEHICLE = 3,
     PERMANENT_VEHICLE = 4

@@ -1,11 +1,11 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "RenderWare.h"
 #include "CColModel.h"
 #include "C2dEffect.h"
@@ -32,7 +32,6 @@ struct tTimeInfo
 VALIDATE_SIZE(tTimeInfo, 4);
 
 // originally an abstract class
-#pragma pack(push, 4)
 class PLUGIN_API CBaseModelInfo {
 public:
 	unsigned int   m_nKey;
@@ -124,6 +123,5 @@ public:
 	void SetOwnsColModel(int bOwns);
 	void IncreaseAlpha();
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CBaseModelInfo, 0x20);

@@ -1,11 +1,11 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CVehicle.h"
 #include "CDoor.h"
 #include "CBouncingPanel.h"
@@ -43,7 +43,6 @@ enum eCarNodes {
     CAR_NUM_NODES
 };
 
-#pragma pack(push, 1)
 class CAutomobile : public CVehicle {
 protected:
     CAutomobile(plugin::dummy_func_t) : CVehicle(plugin::dummy) {}
@@ -246,7 +245,6 @@ public:
     void FireTruckControl(float arg0);
     bool HasCarStoppedBecauseOfLight();
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CAutomobile, 0x988);
 

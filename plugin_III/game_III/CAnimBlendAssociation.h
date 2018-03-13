@@ -1,19 +1,18 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto 3) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 #include "RenderWare.h"
 #include "CAnimBlendClumpData.h"
 #include "CAnimBlendNode.h"
 
 class CAnimBlendHierarchy;
 
-#pragma pack(push, 8)
 class CAnimBlendAssociation {
 public:
     void *vtable;
@@ -54,6 +53,5 @@ public:
     //CAnimBlendAssociation::SetDeleteCallback(void(*)(CAnimBlendAssociation*, void *), void *) 0x401800
     //CAnimBlendAssociation::SetFinishCallback(void(*)(CAnimBlendAssociation*, void *), void *) 0x401820
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CAnimBlendAssociation, 0x40);

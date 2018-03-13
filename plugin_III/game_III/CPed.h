@@ -1,12 +1,12 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto 3) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 #include "RenderWare.h"
 #include "CPhysical.h"
 #include "CStoredCollPoly.h"
@@ -17,7 +17,7 @@
 
 class CVehicle;
 
-#pragma pack(push, 4)
+
 class CPed : public CPhysical {
 protected:
     CPed(plugin::dummy_func_t) : CPhysical(plugin::dummy), m_aWeapons{ plugin::dummy, plugin::dummy,
@@ -264,7 +264,6 @@ public:
     void ClearPointGunAt();
     char ClearLookFlag();
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(CPed, 0x53C);
 

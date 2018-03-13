@@ -1,17 +1,17 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto San Andreas) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "ePedType.h"
 #include "CPhysical.h"
 #include "CAEPedAudioEntity.h"
 #include "CAEPedSpeechAudioEntity.h"
-#include "CAEPedWeaponAudioEntity.h"
+#include "CAEWeaponAudioEntity.h"
 #include "CPedIntelligence.h"
 #include "CPlayerData.h"
 #include "AnimBlendFrameData.h"
@@ -50,7 +50,7 @@ protected:
 public:
     CAEPedAudioEntity			m_pedAudio;
     CAEPedSpeechAudioEntity		m_pedSpeech;
-	CAEPedWeaponAudioEntity		m_weaponAudio;
+    CAEWeaponAudioEntity		m_weaponAudio;
     char field_43C[36];
     char field_460[8];
     int field_468;
@@ -283,6 +283,8 @@ public:
 
     // class functions
 
+
+	CPed(ePedType);
     bool PedIsInvolvedInConversation();
     bool PedIsReadyForConversation(bool arg0);
     bool PedCanPickUpPickUp();
@@ -416,6 +418,7 @@ public:
     void KillPedWithCar(CVehicle* car, float arg1, bool arg2);
     void MakeTyresMuddySectorList(CPtrList& ptrList);
     void DeadPedMakesTyresBloody();
+	void SetModelIndex(unsigned int modelIndex);
 
     static void* operator new(unsigned int size);
     static void operator delete(void* data);

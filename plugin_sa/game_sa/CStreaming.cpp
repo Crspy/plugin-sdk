@@ -1,5 +1,5 @@
 /*
-    Plugin-SDK (Grand Theft Auto) source file
+    Plugin-SDK (Grand Theft Auto San Andreas) source file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
@@ -33,7 +33,8 @@ int *CStreaming::firetruckModelsByTown = (int *)0x8A5AD4;
 int *CStreaming::firemanModelsByTown = (int *)0x8A5AE4;
 int *CStreaming::taxiDriverModelsByTown = (int *)0x8A5AF4;
 int *CStreaming::ms_pedsLoaded = (int *)0x8E4C00;
-
+CStreamingInfo *CStreaming::ms_pStartLoadedList = (CStreamingInfo *)0x8E4C60;
+CLoadedCarGroup &CStreaming::ms_vehiclesLoaded = *(CLoadedCarGroup*)0x8E4C24;
 CStreamingInfo *CStreaming::ms_aInfoForModel = (CStreamingInfo *)0x8E4CC0;
 
 void CStreaming::ImGonnaUseStreamingMemory()

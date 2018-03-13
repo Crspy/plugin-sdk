@@ -1,12 +1,12 @@
 /*
-    Plugin-SDK (Grand Theft Auto) header file
+    Plugin-SDK (Grand Theft Auto 3) header file
     Authors: GTA Community. See more here
     https://github.com/DK22Pac/plugin-sdk
     Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_III.h"
+#include "PluginBase.h"
 #include "CCutsceneHead.h"
 #include "CDirectory.h"
 
@@ -34,8 +34,8 @@ public:
     static CCutsceneObject* CreateCutsceneObject(int modelIndex);
     static void DeleteCutsceneData();
     static void FinishCutscene();
-    static double GetCutsceneTimeInMilleseconds();
-    static double HasCutsceneFinished();
+    static int GetCutsceneTimeInMilleseconds();
+    static bool HasCutsceneFinished();
     static void Initialise();
     static void LoadCutsceneData(char const* cutsceneName);
     static void SetCutsceneAnim(char const* animName, CObject* object);

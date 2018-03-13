@@ -1,12 +1,12 @@
 /*
-Plugin-SDK (Grand Theft Auto) header file
+Plugin-SDK (Grand Theft Auto San Andreas) header file
 Authors: GTA Community. See more here
 https://github.com/DK22Pac/plugin-sdk
 Do not delete this comment block. Respect others' work!
 */
 #pragma once
 
-#include "plbase/PluginBase_SA.h"
+#include "PluginBase.h"
 #include "CVector.h"
 #include "CRGBA.h"
 #include "CVector2D.h"
@@ -140,7 +140,7 @@ struct airstrip_info {
 
 VALIDATE_SIZE(airstrip_info, 0x10);
 
-#pragma pack(push, 4)
+
 struct tRadarTrace {
     unsigned int   m_dwColour; // see eBlipColour
     unsigned int   m_dwEntityHandle;
@@ -160,7 +160,6 @@ struct tRadarTrace {
     unsigned char  m_nBlipDisplayFlag : 2; // see eBlipDisplay
     unsigned char  m_nBlipType : 4; // see eBlipType
 };
-#pragma pack(pop)
 
 VALIDATE_SIZE(tRadarTrace, 0x28);
 
